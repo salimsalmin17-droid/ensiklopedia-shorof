@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F0F8FB" />
+  <title>Ensiklopedia Shorof — Belajar Tashrif Lengkap</title>
+  <link rel="stylesheet" href="style.css?v=20261104d" />
+  <!-- Google Fonts: untuk teks Latin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ===== SIDEBAR NAVIGASI ===== -->
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-ar">الصَّرْف</span>
+        <span class="logo-id">Ensiklopedia Shorof</span>
+      </div>
+      <button id="sidebar-close" class="sidebar-close" aria-label="Tutup menu">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-search">
+      <input type="text" id="nav-search-input" placeholder="Cari fi'il atau materi..." autocomplete="off" />
+      <button id="nav-search-btn" aria-label="Cari">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-menu">
+      <!-- BERANDA -->
+      <div class="nav-item active" data-page="beranda">Beranda</div>
+
+      <!-- PENGANTAR -->
+      <div class="nav-group">
+        <div class="nav-group-title">Pengantar Ilmu Shorof</div>
+        <div class="nav-item" data-page="pengertian">Pengertian Ilmu Shorof</div>
+        <div class="nav-item" data-page="tujuan">Tujuan &amp; Manfaat</div>
+        <div class="nav-item" data-page="istilah">Istilah-Istilah Dasar</div>
+        <div class="nav-item" data-page="pembagian-fiil">Pembagian Fi'il</div>
+        <div class="nav-item" data-page="tashrif-umum">Tashrif: Istilahi &amp; Lughawi</div>
+        <div class="nav-item" data-page="penerapan">Penerapan dalam Kalimat</div>
+      </div>
+
+      <!-- SEJARAH -->
+      <div class="nav-group">
+        <div class="nav-group-title">Sejarah Nahwu &amp; Shorof</div>
+        <div class="nav-item" data-page="sejarah-latar">Latar Belakang</div>
+        <div class="nav-item" data-page="sejarah-tokoh">Tokoh-Tokoh Penting</div>
+        <div class="nav-item" data-page="sejarah-kitab">Kitab-Kitab Klasik</div>
+        <div class="nav-item" data-page="sejarah-modern">Perkembangan Modern</div>
+      </div>
+
+      <!-- NAHWU -->
+      <div class="nav-group">
+        <div class="nav-group-title">Pengenalan Ilmu Nahwu</div>
+        <div class="nav-item" data-page="nahwu-pengertian">Pengertian Ilmu Nahwu</div>
+        <div class="nav-item" data-page="nahwu-kalam">Pembagian Kalam</div>
+        <div class="nav-item" data-page="nahwu-irab">I'rab &amp; Bina'</div>
+        <div class="nav-item" data-page="nahwu-tanda">Tanda-Tanda I'rab</div>
+        <div class="nav-item" data-page="nahwu-contoh">Contoh dalam Kalimat</div>
+      </div>
+
+      <!-- TASHRIF: TSULATSI MUJARRAD -->
+      <div class="nav-group">
+        <div class="nav-group-title">Tsulatsi Mujarrad (ثلاثي مجرد)</div>
+        <div class="nav-item" data-page="tm-overview">Gambaran Umum</div>
+        <div class="nav-item" data-page="tm-bab1">Bab I: فَعَلَ - يَفْعُلُ</div>
+        <div class="nav-item" data-page="tm-bab2">Bab II: فَعَلَ - يَفْعِلُ</div>
+        <div class="nav-item" data-page="tm-bab3">Bab III: فَعَلَ - يَفْعَلُ</div>
+        <div class="nav-item" data-page="tm-bab4">Bab IV: فَعِلَ - يَفْعَلُ</div>
+        <div class="nav-item" data-page="tm-bab5">Bab V: فَعُلَ - يَفْعُلُ</div>
+        <div class="nav-item" data-page="tm-bab6">Bab VI: فَعِلَ - يَفْعِلُ</div>
+      </div>
+
+      <!-- TASHRIF: TSULATSI MAZID -->
+      <div class="nav-group">
+        <div class="nav-group-title">Tsulatsi Mazid (ثلاثي مزيد)</div>
+        <div class="nav-item" data-page="tmz-overview">Gambaran Umum</div>
+        <div class="nav-item" data-page="tmz-if3al">أَفْعَلَ (Mazid 1 huruf)</div>
+        <div class="nav-item" data-page="tmz-faala">فَعَّلَ (Mazid 1 huruf)</div>
+        <div class="nav-item" data-page="tmz-faaala">فَاعَلَ (Mazid 1 huruf)</div>
+        <div class="nav-item" data-page="tmz-infa3al">اِنْفَعَلَ (Mazid 2 huruf)</div>
+        <div class="nav-item" data-page="tmz-ifta3al">اِفْتَعَلَ (Mazid 2 huruf)</div>
+        <div class="nav-item" data-page="tmz-ifaal">اِفْعَلَّ (Mazid 2 huruf)</div>
+        <div class="nav-item" data-page="tmz-tafa3al">تَفَعَّلَ (Mazid 2 huruf)</div>
+        <div class="nav-item" data-page="tmz-tafaaal">تَفَاعَلَ (Mazid 2 huruf)</div>
+        <div class="nav-item" data-page="tmz-istaf3al">اِسْتَفْعَلَ (Mazid 3 huruf)</div>
+        <div class="nav-item" data-page="tmz-if3awwal">اِفْعَوَّلَ (Mazid 3 huruf)</div>
+        <div class="nav-item" data-page="tmz-if3aal">اِفْعَالَّ (Mazid 3 huruf)</div>
+      </div>
+
+      <!-- TASHRIF: RUBA'I -->
+      <div class="nav-group">
+        <div class="nav-group-title">Ruba'i Mujarrad &amp; Mazid</div>
+        <div class="nav-item" data-page="rm-overview">Gambaran Umum</div>
+        <div class="nav-item" data-page="rm-mujarrad">فَعْلَلَ — Ruba'i Mujarrad</div>
+        <div class="nav-item" data-page="rm-tafa3lal">تَفَعْلَلَ — Mazid 1 huruf</div>
+        <div class="nav-item" data-page="rm-if3anlal">اِفْعَنْلَلَ — Mazid 2 huruf</div>
+        <div class="nav-item" data-page="rm-if3alal">اِفْعَلَلَّ — Mazid 2 huruf</div>
+      </div>
+
+      <!-- FITUR -->
+      <div class="nav-group">
+        <div class="nav-group-title">Fitur</div>
+        <div class="nav-item" data-page="mesin-tashrif">Mesin Tashrif Otomatis</div>
+        <div class="nav-item" data-page="kalkulator">Kalkulator Tashrif</div>
+        <div class="nav-item" data-page="pencarian">Pencarian Fi'il</div>
+        <div class="nav-item" data-page="kuis">Kuis &amp; Latihan</div>
+        <div class="nav-item" data-page="referensi">Referensi &amp; Sumber</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== OVERLAY (mobile) ===== -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- ===== KONTEN UTAMA ===== -->
+  <div class="main-wrapper">
+    <!-- Topbar -->
+    <header class="topbar">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Buka menu">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+      <div class="topbar-title" id="topbar-title">Beranda</div>
+      <div class="topbar-actions">
+        <button class="btn-icon" id="search-toggle" aria-label="Cari" title="Cari">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </button>
+        <button class="btn-icon" id="dark-toggle" aria-label="Mode gelap" title="Mode Gelap/Terang">
+          <svg class="ui-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="ui-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Search bar (full width, collapsible) -->
+    <div id="search-bar" class="search-bar hidden">
+      <input type="text" id="search-input" placeholder="Cari fi'il, wazan, atau materi..." autocomplete="off" />
+      <div id="search-results" class="search-results"></div>
+    </div>
+
+    <!-- Konten halaman -->
+    <main id="page-content" class="page-content">
+      <!-- Diisi oleh JavaScript -->
+    </main>
+  </div>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-title"></h3>
+        <button class="modal-close" id="modal-close" aria-label="Tutup">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== MOBILE BOTTOM NAV ===== -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navigasi cepat">
+    <button type="button" class="mobile-nav-item active" data-page="beranda" aria-label="Beranda">
+      <span class="mn-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span><span>Beranda</span>
+    </button>
+    <button type="button" class="mobile-nav-item" data-page="istilah" aria-label="Istilah-Istilah Dasar">
+      <span class="mn-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5Z"/><path d="M4 5.5v16"/><path d="M8 7h8M8 11h6"/></svg></span><span>Istilah</span>
+    </button>
+    <button type="button" class="mobile-nav-item" data-page="mesin-tashrif" aria-label="Mesin Tashrif Otomatis">
+      <span class="mn-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="10" y="10" width="4" height="4" rx="1"/></svg></span><span>Mesin</span>
+    </button>
+    <button type="button" class="mobile-nav-item" data-page="kuis" aria-label="Kuis dan Latihan">
+      <span class="mn-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span><span>Kuis</span>
+    </button>
+  </nav>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="data-pengantar.js?v=20261104b"></script>
+  <script src="data-tashrif.js?v=20261104"></script>
+  <script src="tashrif-engine.js?v=20261104"></script>
+  <script src="app.js?v=20261104d"></script>
+  <script src="quiz.js?v=20261104b"></script>
+</body>
+</html>
