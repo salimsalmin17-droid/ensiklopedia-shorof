@@ -3,8 +3,10 @@
    ===================================================== */
 
 /* ── State ── */
+const APP_HISTORY_ID = 'ensiklopedia-shorof';
 let currentPage = 'beranda';
 let darkMode = false;
+let appHistoryDepth = 0;
 
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupDarkMode();
   setupModal();
   setupMobileMenu();
-  navigateTo('beranda');
+  setupHistory();
+  const initialPage = getPageFromHash() || 'beranda';
+  navigateTo(initialPage, { history: 'replace' });
 });
 
 /* =====================================================
@@ -33,8 +37,13 @@ function setupNav() {
   });
 }
 
-function navigateTo(page) {
+function navigateTo(page, options = {}) {
+  const historyMode = options.history || 'push';
+  if (!isKnownPage(page)) page = 'beranda';
+
+  const samePage = page === currentPage;
   currentPage = page;
+
   // update active state
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   const activeEl = document.querySelector(`.nav-item[data-page="${page}"]`);
@@ -55,6 +64,75 @@ function navigateTo(page) {
   // topbar title
   document.getElementById('topbar-title').textContent = activeEl ? activeEl.textContent.trim() : page;
   window.scrollTo(0, 0);
+
+  // Simpan halaman ke history browser agar tombol back HP kembali ke
+  // halaman sebelumnya, bukan keluar dari aplikasi.
+  if (historyMode === 'push' && !samePage) {
+    const nextDepth = appHistoryDepth + 1;
+    try {
+      history.pushState({ app: APP_HISTORY_ID, page, depth: nextDepth }, '', '#' + page);
+      appHistoryDepth = nextDepth;
+    } catch (err) {
+      // Abaikan jika browser membatasi History API (misalnya file://).
+    }
+  } else if (historyMode === 'replace') {
+    try {
+      history.replaceState({ app: APP_HISTORY_ID, page, depth: appHistoryDepth }, '', '#' + page);
+    } catch (err) {
+      // Abaikan jika browser membatasi History API (misalnya file://).
+    }
+  }
+
+  updateBackButton();
+}
+
+function isKnownPage(page) {
+  if (!page) return false;
+  return Array.from(document.querySelectorAll('.nav-item[data-page]'))
+    .some(el => el.dataset.page === page);
+}
+
+function getPageFromHash() {
+  const raw = (window.location.hash || '').replace(/^#/, '');
+  if (!raw) return '';
+  try {
+    const page = decodeURIComponent(raw);
+    return isKnownPage(page) ? page : '';
+  } catch (err) {
+    return '';
+  }
+}
+
+function setupHistory() {
+  window.addEventListener('popstate', (event) => {
+    const state = event.state;
+    const page = (state && state.app === APP_HISTORY_ID && isKnownPage(state.page))
+      ? state.page
+      : (getPageFromHash() || 'beranda');
+
+    appHistoryDepth = (state && state.app === APP_HISTORY_ID && Number.isInteger(state.depth))
+      ? state.depth
+      : 0;
+
+    navigateTo(page, { history: 'none' });
+  });
+}
+
+function updateBackButton() {
+  const btn = document.getElementById('back-btn');
+  if (!btn) return;
+  const show = currentPage !== 'beranda';
+  btn.classList.toggle('hidden', !show);
+  btn.setAttribute('aria-hidden', show ? 'false' : 'true');
+  btn.tabIndex = show ? 0 : -1;
+}
+
+function goBack() {
+  if (appHistoryDepth > 0) {
+    history.back();
+    return;
+  }
+  navigateTo('beranda', { history: 'replace' });
 }
 
 /* =====================================================
