@@ -199,6 +199,16 @@ function analyzeFiil(madhi, mudhari) {
       return makeInfo('اِفْعَنْلَلَ', 'if3anlal', 'rubai_mazid', 2, 'ا،ن',
         [sk[1], sk[2], sk[4], sk[5]], 'Mutawa\'ah dari فَعْلَلَ', raw, mudhari);
     }
+    // اِفْعَالَّ (اِحْمَارَّ)
+    if (sk[0] === 'ا' && sk[3] === 'ا' && sk[4] === sk[5]) {
+      return makeInfo('اِفْعَالَّ', 'if3aal', 'tsulatsi_mazid', 3, 'ا،ا،tasydid',
+        [sk[1], sk[2], sk[4]], 'Menyatakan warna atau cacat fisik yang sangat intens', raw, mudhari);
+    }
+    // اِفْعَوْعَلَ (اِحْدَوْدَبَ)
+    if (sk[0] === 'ا' && sk[3] === 'و' && sk[4] === sk[2]) {
+      return makeInfo('اِفْعَوْعَلَ', 'if3awal', 'tsulatsi_mazid', 3, 'ا،و،pengulangan \'ain',
+        [sk[1], sk[2], sk[5]], 'Menyatakan keadaan atau sifat fisik', raw, mudhari);
+    }
     // اِفْعَوَّلَ
     if (sk[0] === 'ا' && sk[3] === 'و' && sk[4] === 'و') {
       return makeInfo('اِفْعَوَّلَ', 'if3awwal', 'tsulatsi_mazid', 3, 'ا،و،و',
@@ -642,6 +652,58 @@ function gen_TMZ_ushuli(info) {
       ['Isim Zaman / Makan',       `مُسْتَ${f}${SUKUN}${a}${FATHA}${l}${TANWIN_D}`],
       ['Isim Alat',                '-'],
     ],
+    'if3all': [
+      ['Fi\'il Madhi Ma\'lum',     `اِ${f}${SUKUN}${a}${FATHA}${l}${SHADDA}${FATHA}`],
+      ['Fi\'il Mudhari\' Ma\'lum', `يَ${f}${SUKUN}${a}${FATHA}${l}${SHADDA}${DAMMA}`],
+      ['Masdar',                   `اِ${f}${SUKUN}${a}${KASRA}${l}${FATHA}ا${l}${TANWIN_D}`],
+      ['Fi\'il Amr',               `اِ${f}${SUKUN}${a}${FATHA}${l}${KASRA}${l}${SUKUN}`],
+      ['Fi\'il Nahyi',             `لَا تَ${f}${SUKUN}${a}${FATHA}${l}${KASRA}${l}${SUKUN}`],
+      ['Isim Fa\'il',              `مُ${f}${SUKUN}${a}${FATHA}${l}${SHADDA}${TANWIN_D}`],
+      ['Isim Maf\'ul',             '-'],
+      ['Fi\'il Madhi Majhul',      '-'],
+      ['Fi\'il Mudhari\' Majhul',  '-'],
+      ['Isim Zaman / Makan',       '-'],
+      ['Isim Alat',                '-'],
+    ],
+    'if3aal': [
+      ['Fi\'il Madhi Ma\'lum',     `اِ${f}${SUKUN}${a}${FATHA}ا${l}${SHADDA}${FATHA}`],
+      ['Fi\'il Mudhari\' Ma\'lum', `يَ${f}${SUKUN}${a}${FATHA}ا${l}${SHADDA}${DAMMA}`],
+      ['Masdar',                   `اِ${f}${SUKUN}${a}${KASRA}ي${l}${FATHA}ا${l}${TANWIN_D}`],
+      ['Fi\'il Amr',               `اِ${f}${SUKUN}${a}${FATHA}ا${l}${KASRA}${l}${SUKUN}`],
+      ['Fi\'il Nahyi',             `لَا تَ${f}${SUKUN}${a}${FATHA}ا${l}${KASRA}${l}${SUKUN}`],
+      ['Isim Fa\'il',              `مُ${f}${SUKUN}${a}${FATHA}ا${l}${SHADDA}${TANWIN_D}`],
+      ['Isim Maf\'ul',             '-'],
+      ['Fi\'il Madhi Majhul',      '-'],
+      ['Fi\'il Mudhari\' Majhul',  '-'],
+      ['Isim Zaman / Makan',       '-'],
+      ['Isim Alat',                '-'],
+    ],
+    'if3awwal': [
+      ['Fi\'il Madhi Ma\'lum',     `اِ${f}${SUKUN}${a}${FATHA}و${SHADDA}${FATHA}${l}${FATHA}`],
+      ['Fi\'il Mudhari\' Ma\'lum', `يَ${f}${SUKUN}${a}${FATHA}و${SHADDA}${KASRA}${l}${DAMMA}`],
+      ['Masdar',                   `اِ${f}${SUKUN}${a}${KASRA}و${SHADDA}${FATHA}ا${l}${TANWIN_D}`],
+      ['Fi\'il Amr',               `اِ${f}${SUKUN}${a}${FATHA}و${SHADDA}${KASRA}${l}${SUKUN}`],
+      ['Fi\'il Nahyi',             `لَا تَ${f}${SUKUN}${a}${FATHA}و${SHADDA}${KASRA}${l}${SUKUN}`],
+      ['Isim Fa\'il',              `مُ${f}${SUKUN}${a}${FATHA}و${SHADDA}${KASRA}${l}${TANWIN_D}`],
+      ['Isim Maf\'ul',             '-'],
+      ['Fi\'il Madhi Majhul',      '-'],
+      ['Fi\'il Mudhari\' Majhul',  '-'],
+      ['Isim Zaman / Makan',       '-'],
+      ['Isim Alat',                '-'],
+    ],
+    'if3awal': [
+      ['Fi\'il Madhi Ma\'lum',     `اِ${f}${SUKUN}${a}${FATHA}و${SUKUN}${a}${FATHA}${l}${FATHA}`],
+      ['Fi\'il Mudhari\' Ma\'lum', `يَ${f}${SUKUN}${a}${FATHA}و${SUKUN}${a}${KASRA}${l}${DAMMA}`],
+      ['Masdar',                   `اِ${f}${SUKUN}${a}${KASRA}ي${SUKUN}${a}${FATHA}ا${l}${TANWIN_D}`],
+      ['Fi\'il Amr',               `اِ${f}${SUKUN}${a}${FATHA}و${SUKUN}${a}${KASRA}${l}${SUKUN}`],
+      ['Fi\'il Nahyi',             `لَا تَ${f}${SUKUN}${a}${FATHA}و${SUKUN}${a}${KASRA}${l}${SUKUN}`],
+      ['Isim Fa\'il',              `مُ${f}${SUKUN}${a}${FATHA}و${SUKUN}${a}${KASRA}${l}${TANWIN_D}`],
+      ['Isim Maf\'ul',             '-'],
+      ['Fi\'il Madhi Majhul',      '-'],
+      ['Fi\'il Mudhari\' Majhul',  '-'],
+      ['Isim Zaman / Makan',       '-'],
+      ['Isim Alat',                '-'],
+    ],
   };
 
   return finish(tpl[key] || []);
@@ -704,6 +766,76 @@ const ARTI_DHAMIR = [
   'saya', 'kami/kita'
 ];
 
+/* ── Lughawi khusus wazan dengan lam bertasydid (اِفْعَلَّ / اِفْعَالَّ) ── */
+function genMudhariDoubledFinal(base) {
+  // contoh: يَحْمَرُّ / يَحْمَارُّ
+  const parsed = parseWord(base);
+  if (!parsed.length) return [];
+  const p  = parsed[0].c;
+  const p2 = p === 'ي' ? 'ت' : p;
+
+  // Buang harakat akhir lalu syaddah, sisakan batang + radikal akhir.
+  const noFinalHar = base.replace(/[\u064B-\u0652]$/, '');
+  const stem = noFinalHar.replace(new RegExp(SHADDA + '$'), '');
+  const last = stem[stem.length - 1];
+
+  const fath = stem + FATHA + SHADDA;       // يَحْمَرَّ
+  const damm = stem + DAMMA + SHADDA;       // يَحْمَرُّ
+  const kasr = stem + KASRA + SHADDA;       // يَحْمَرِّ
+  const expanded = stem + KASRA + last;     // يَحْمَرِر
+
+  const fath2 = p2 + fath.slice(1);
+  const damm2 = p2 + damm.slice(1);
+  const kasr2 = p2 + kasr.slice(1);
+  const expanded2 = p2 + expanded.slice(1);
+
+  return rows13([
+    base,
+    damm2,
+    fath + 'انِ',
+    fath2 + 'انِ',
+    damm + 'وْنَ',
+    expanded + SUKUN + 'نَ',
+    damm2,
+    kasr2 + 'يْنَ',
+    fath2 + 'انِ',
+    damm2 + 'وْنَ',
+    expanded2 + SUKUN + 'نَ',
+    'أ' + base.slice(1),
+    'ن' + base.slice(1),
+  ]);
+}
+
+function mkAmrRows(forms) {
+  const dh = ['أَنْتَ','أَنْتِ','أَنْتُمَا','أَنْتُمْ','أَنْتُنَّ'];
+  const arti = ['kamu (lk.)','kamu (pr.)','kamu berdua','kamu semua (lk.)','kamu semua (pr.)'];
+  return forms.map((ar, i) => [dh[i], ar, arabToLatin(ar), arti[i]]);
+}
+
+function genAmrDoubledFinal(base) {
+  // contoh: اِحْمَرِرْ / اِحْمَارِرْ
+  const parsed = parseWord(base);
+  if (!parsed.length) return [];
+  const first = parsed[0];
+  const hasPrefix = (first.c === 'ا' || first.c === 'أ' || first.c === 'إ');
+  const prefix = hasPrefix ? first.c + (first.h || '') : '';
+  const rest = base.slice(prefix.length);
+  const core = rest.replace(/[\u064B-\u0652]$/, ''); // حْمَرِر
+
+  // Buang bunyi "ِر" di ujung, lalu pasang syaddah pada radikal akhir.
+  const stem = core.replace(new RegExp(KASRA + 'ر$'), '');
+  const kasraStem = stem + SHADDA + KASRA;   // حْمَرِّ
+  const dammaStem = stem + SHADDA + DAMMA;   // حْمَرُّ
+
+  return mkAmrRows([
+    base,
+    prefix + kasraStem + 'يْ',
+    prefix + kasraStem + 'ا',
+    prefix + dammaStem + 'وْا',
+    prefix + core + SUKUN + 'نَ',
+  ]);
+}
+
 function generateLughawi(info) {
   const ushuli = generateUshuli(info);
   if (!ushuli.length) return {};
@@ -713,11 +845,12 @@ function generateLughawi(info) {
   const amr_ar   = ushuli[3].ar;
   const madhiMj  = ushuli[7].ar;
   const mudhMj   = ushuli[8].ar;
+  const doubledFinal = info.wazanKey === 'if3all' || info.wazanKey === 'if3aal';
 
   return {
     madhi_malum:    genMadhi(madhi_ar, info),
-    mudhari_malum:  genMudhari(mudh_ar),
-    amr:            genAmr(amr_ar, info),
+    mudhari_malum:  doubledFinal ? genMudhariDoubledFinal(mudh_ar) : genMudhari(mudh_ar),
+    amr:            doubledFinal ? genAmrDoubledFinal(amr_ar) : genAmr(amr_ar, info),
     madhi_majhul:   (madhiMj && madhiMj !== '-') ? genMadhi(madhiMj, info) : [],
     mudhari_majhul: (mudhMj  && mudhMj  !== '-') ? genMudhari(mudhMj) : [],
   };

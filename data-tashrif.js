@@ -620,11 +620,11 @@ const TSULATSI_MAZID = {
   overview: {
     title: "Fi'il Tsulatsi Mazid",
     titleAr: "الْفِعْلُ الثُّلَاثِيُّ الْمَزِيْد",
-    desc: "Fi'il tsulatsi yang mendapat huruf tambahan (ziyadah) 1, 2, atau 3 huruf di luar huruf aslinya.",
+    desc: "Fi'il tsulatsi yang mendapat huruf tambahan (ziyadah) 1, 2, atau 3 huruf di luar huruf aslinya. Total 12 wazan: 3 + 5 + 4.",
     kelompok: [
       { num:"1 huruf tambahan", wazanList:["أَفْعَلَ","فَعَّلَ","فَاعَلَ"] },
       { num:"2 huruf tambahan", wazanList:["اِنْفَعَلَ","اِفْتَعَلَ","اِفْعَلَّ","تَفَعَّلَ","تَفَاعَلَ"] },
-      { num:"3 huruf tambahan", wazanList:["اِسْتَفْعَلَ","اِفْعَوَّلَ","اِفْعَالَّ"] }
+      { num:"3 huruf tambahan", wazanList:["اِسْتَفْعَلَ","اِفْعَالَّ","اِفْعَوْعَلَ","اِفْعَوَّلَ"] }
     ]
   },
 
@@ -1381,6 +1381,291 @@ const TSULATSI_MAZID = {
         ]
       }
     }
+  },
+
+  /* ── 9. اِفْعَلَّ ── */
+  if3alla: {
+    id:"tmz-ifaal",
+    wazan:"اِفْعَلَّ - يَفْعَلُّ",
+    wazanAr:"اِفْعَلَّ",
+    ziyadah:"2 huruf (hamzah washl + tasydid pada lam)",
+    makna:"Menyatakan warna atau cacat fisik; biasanya lazim (intransitif).",
+    penjelasan:"اِفْعَلَّ adalah wazan mazid 2 huruf yang khas untuk warna dan cacat fisik. Contoh: اِحْمَرَّ (menjadi merah). Karena lazim, bentuk majhul dan isim maf'ul tidak digunakan.",
+    contohFiil:[
+      { ar:"اِحْمَرَّ - يَحْمَرُّ", arti:"menjadi merah",  root:"ح-م-ر" },
+      { ar:"اِخْضَرَّ - يَخْضَرُّ", arti:"menjadi hijau",  root:"خ-ض-ر" },
+      { ar:"اِصْفَرَّ - يَصْفَرُّ", arti:"menjadi kuning", root:"ص-ف-ر" },
+      { ar:"اِسْوَدَّ - يَسْوَدُّ", arti:"menjadi hitam",  root:"س-و-د" },
+      { ar:"اِبْيَضَّ - يَبْيَضُّ", arti:"menjadi putih",  root:"ب-ي-ض" },
+      { ar:"اِزْرَقَّ - يَزْرَقُّ", arti:"menjadi biru",   root:"ز-ر-ق" }
+    ],
+    utama:{ ar:"اِحْمَرَّ", arti:"menjadi merah", root:"ح-م-ر" },
+    tashrif:{
+      ushuli:[
+        { label:"Fi'il Madhi Ma'lum",    ar:"اِحْمَرَّ",      arti:"telah menjadi merah" },
+        { label:"Fi'il Mudhari' Ma'lum", ar:"يَحْمَرُّ",      arti:"sedang/akan menjadi merah" },
+        { label:"Masdar",                ar:"اِحْمِرَارًا",   arti:"kemerahan" },
+        { label:"Fi'il Amr",             ar:"اِحْمَرِرْ",     arti:"jadilah merah!" },
+        { label:"Fi'il Nahyi",           ar:"لَا تَحْمَرِرْ", arti:"jangan menjadi merah!" },
+        { label:"Isim Fa'il",            ar:"مُحْمَرٌّ",       arti:"yang merah" },
+        { label:"Isim Maf'ul",           ar:"-",              arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Madhi Majhul",    ar:"-",              arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Mudhari' Majhul", ar:"-",              arti:"(lazim — tidak ada)" },
+        { label:"Isim Zaman/Makan",      ar:"-",              arti:"(tidak berlaku)" }
+      ],
+      lughawi:{
+        madhi_malum:[
+          ["هُوَ","اِحْمَرَّ","ihmarra","dia (lk.) telah menjadi merah"],
+          ["هِيَ","اِحْمَرَّتْ","ihmarrat","dia (pr.) telah menjadi merah"],
+          ["هُمَا","اِحْمَرَّا","ihmarraa","keduanya (lk.) telah menjadi merah"],
+          ["هُمَا","اِحْمَرَّتَا","ihmarrataa","keduanya (pr.) telah menjadi merah"],
+          ["هُمْ","اِحْمَرُّوْا","ihmarruu","mereka (lk.) telah menjadi merah"],
+          ["هُنَّ","اِحْمَرَرْنَ","ihmararna","mereka (pr.) telah menjadi merah"],
+          ["أَنْتَ","اِحْمَرَرْتَ","ihmararta","kamu (lk.) telah menjadi merah"],
+          ["أَنْتِ","اِحْمَرَرْتِ","ihmararti","kamu (pr.) telah menjadi merah"],
+          ["أَنْتُمَا","اِحْمَرَرْتُمَا","ihmarartumaa","kamu berdua telah menjadi merah"],
+          ["أَنْتُمْ","اِحْمَرَرْتُمْ","ihmarartum","kamu semua (lk.) telah menjadi merah"],
+          ["أَنْتُنَّ","اِحْمَرَرْتُنَّ","ihmarartunna","kamu semua (pr.) telah menjadi merah"],
+          ["أَنَا","اِحْمَرَرْتُ","ihmarartu","saya telah menjadi merah"],
+          ["نَحْنُ","اِحْمَرَرْنَا","ihmararnaa","kami/kita telah menjadi merah"]
+        ],
+        mudhari_malum:[
+          ["هُوَ","يَحْمَرُّ","yahmarru","dia (lk.) menjadi merah"],
+          ["هِيَ","تَحْمَرُّ","tahmarru","dia (pr.) menjadi merah"],
+          ["هُمَا","يَحْمَرَّانِ","yahmarraani","keduanya (lk.) menjadi merah"],
+          ["هُمَا","تَحْمَرَّانِ","tahmarraani","keduanya (pr.) menjadi merah"],
+          ["هُمْ","يَحْمَرُّوْنَ","yahmarruuna","mereka (lk.) menjadi merah"],
+          ["هُنَّ","يَحْمَرِرْنَ","yahmarirna","mereka (pr.) menjadi merah"],
+          ["أَنْتَ","تَحْمَرُّ","tahmarru","kamu (lk.) menjadi merah"],
+          ["أَنْتِ","تَحْمَرِّيْنَ","tahmarriina","kamu (pr.) menjadi merah"],
+          ["أَنْتُمَا","تَحْمَرَّانِ","tahmarraani","kamu berdua menjadi merah"],
+          ["أَنْتُمْ","تَحْمَرُّوْنَ","tahmarruuna","kamu semua (lk.) menjadi merah"],
+          ["أَنْتُنَّ","تَحْمَرِرْنَ","tahmarirna","kamu semua (pr.) menjadi merah"],
+          ["أَنَا","أَحْمَرُّ","ahmarru","saya menjadi merah"],
+          ["نَحْنُ","نَحْمَرُّ","nahmarru","kami/kita menjadi merah"]
+        ],
+        amr:[
+          ["أَنْتَ","اِحْمَرِرْ","ihmarir","jadilah merah! (lk.)"],
+          ["أَنْتِ","اِحْمَرِّيْ","ihmarrii","jadilah merah! (pr.)"],
+          ["أَنْتُمَا","اِحْمَرِّا","ihmarriaa","jadilah merah kamu berdua!"],
+          ["أَنْتُمْ","اِحْمَرُّوْا","ihmarruu","jadilah merah kamu semua (lk.)!"],
+          ["أَنْتُنَّ","اِحْمَرِرْنَ","ihmarirna","jadilah merah kamu semua (pr.)!"]
+        ],
+        madhi_majhul:[], mudhari_majhul:[]
+      }
+    }
+  },
+
+  /* ── 10. اِفْعَوَّلَ ── */
+  if3awwal: {
+    id:"tmz-if3awwal",
+    wazan:"اِفْعَوَّلَ - يَفْعَوِّلُ",
+    wazanAr:"اِفْعَوَّلَ",
+    ziyadah:"3 huruf (hamzah washl + waw + tasydid pada waw)",
+    makna:"Mubalaghah dan terkadang menunjukkan gerakan atau keadaan tertentu; biasanya lazim.",
+    penjelasan:"اِفْعَوَّلَ adalah wazan mazid 3 huruf yang jarang. Cirinya: setelah fa' dan 'ain terdapat waw bertasydid. Contoh: اِجْلَوَّذَ (berjalan cepat).",
+    contohFiil:[
+      { ar:"اِجْلَوَّذَ - يَجْلَوِّذُ", arti:"berjalan cepat", root:"ج-ل-ذ" },
+      { ar:"اِعْلَوَّطَ - يَعْلَوِّطُ", arti:"berpegang/naik unta tanpa pelana", root:"ع-ل-ط" },
+      { ar:"اِخْرَوَّطَ - يَخْرَوِّطُ", arti:"memanjang; berlangsung lama", root:"خ-ر-ط" }
+    ],
+    utama:{ ar:"اِجْلَوَّذَ", arti:"berjalan cepat", root:"ج-ل-ذ" },
+    tashrif:{
+      ushuli:[
+        { label:"Fi'il Madhi Ma'lum",    ar:"اِجْلَوَّذَ",      arti:"telah berjalan cepat" },
+        { label:"Fi'il Mudhari' Ma'lum", ar:"يَجْلَوِّذُ",      arti:"sedang/akan berjalan cepat" },
+        { label:"Masdar",                ar:"اِجْلِوَّاذًا",    arti:"kecepatan/kelangsungan" },
+        { label:"Fi'il Amr",             ar:"اِجْلَوِّذْ",      arti:"berjalan cepatlah!" },
+        { label:"Fi'il Nahyi",           ar:"لَا تَجْلَوِّذْ",  arti:"jangan berjalan cepat!" },
+        { label:"Isim Fa'il",            ar:"مُجْلَوِّذٌ",      arti:"yang berjalan cepat" },
+        { label:"Isim Maf'ul",           ar:"-",               arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Madhi Majhul",    ar:"-",               arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Mudhari' Majhul", ar:"-",               arti:"(lazim — tidak ada)" },
+        { label:"Isim Zaman/Makan",      ar:"-",               arti:"(tidak berlaku)" }
+      ],
+      lughawi:{
+        madhi_malum:[
+          ["هُوَ","اِجْلَوَّذَ","ijlawwadza","dia (lk.) telah berjalan cepat"],
+          ["هِيَ","اِجْلَوَّذَتْ","ijlawwadzat","dia (pr.) telah berjalan cepat"],
+          ["هُمَا","اِجْلَوَّذَا","ijlawwadzaa","keduanya (lk.) telah berjalan cepat"],
+          ["هُمَا","اِجْلَوَّذَتَا","ijlawwadzataa","keduanya (pr.) telah berjalan cepat"],
+          ["هُمْ","اِجْلَوَّذُوْا","ijlawwadzuu","mereka (lk.) telah berjalan cepat"],
+          ["هُنَّ","اِجْلَوَّذْنَ","ijlawwadzna","mereka (pr.) telah berjalan cepat"],
+          ["أَنْتَ","اِجْلَوَّذْتَ","ijlawwadzta","kamu (lk.) telah berjalan cepat"],
+          ["أَنْتِ","اِجْلَوَّذْتِ","ijlawwadzti","kamu (pr.) telah berjalan cepat"],
+          ["أَنْتُمَا","اِجْلَوَّذْتُمَا","ijlawwadztumaa","kamu berdua telah berjalan cepat"],
+          ["أَنْتُمْ","اِجْلَوَّذْتُمْ","ijlawwadztum","kamu semua (lk.) telah berjalan cepat"],
+          ["أَنْتُنَّ","اِجْلَوَّذْتُنَّ","ijlawwadztunna","kamu semua (pr.) telah berjalan cepat"],
+          ["أَنَا","اِجْلَوَّذْتُ","ijlawwadztu","saya telah berjalan cepat"],
+          ["نَحْنُ","اِجْلَوَّذْنَا","ijlawwadznaa","kami/kita telah berjalan cepat"]
+        ],
+        mudhari_malum:[
+          ["هُوَ","يَجْلَوِّذُ","yajlawwidzu","dia (lk.) berjalan cepat"],
+          ["هِيَ","تَجْلَوِّذُ","tajlawwidzu","dia (pr.) berjalan cepat"],
+          ["هُمَا","يَجْلَوِّذَانِ","yajlawwidzaani","keduanya (lk.) berjalan cepat"],
+          ["هُمَا","تَجْلَوِّذَانِ","tajlawwidzaani","keduanya (pr.) berjalan cepat"],
+          ["هُمْ","يَجْلَوِّذُوْنَ","yajlawwidzuuna","mereka (lk.) berjalan cepat"],
+          ["هُنَّ","يَجْلَوِّذْنَ","yajlawwidzna","mereka (pr.) berjalan cepat"],
+          ["أَنْتَ","تَجْلَوِّذُ","tajlawwidzu","kamu (lk.) berjalan cepat"],
+          ["أَنْتِ","تَجْلَوِّذِيْنَ","tajlawwidziina","kamu (pr.) berjalan cepat"],
+          ["أَنْتُمَا","تَجْلَوِّذَانِ","tajlawwidzaani","kamu berdua berjalan cepat"],
+          ["أَنْتُمْ","تَجْلَوِّذُوْنَ","tajlawwidzuuna","kamu semua (lk.) berjalan cepat"],
+          ["أَنْتُنَّ","تَجْلَوِّذْنَ","tajlawwidzna","kamu semua (pr.) berjalan cepat"],
+          ["أَنَا","أَجْلَوِّذُ","ajlawwidzu","saya berjalan cepat"],
+          ["نَحْنُ","نَجْلَوِّذُ","najlawwidzu","kami/kita berjalan cepat"]
+        ],
+        amr:[
+          ["أَنْتَ","اِجْلَوِّذْ","ijlawwidz","berjalan cepatlah! (lk.)"],
+          ["أَنْتِ","اِجْلَوِّذِيْ","ijlawwidzii","berjalan cepatlah! (pr.)"],
+          ["أَنْتُمَا","اِجْلَوِّذَا","ijlawwidzaa","berjalan cepatlah kamu berdua!"],
+          ["أَنْتُمْ","اِجْلَوِّذُوْا","ijlawwidzuu","berjalan cepatlah kamu semua (lk.)!"],
+          ["أَنْتُنَّ","اِجْلَوِّذْنَ","ijlawwidzna","berjalan cepatlah kamu semua (pr.)!"]
+        ],
+        madhi_majhul:[], mudhari_majhul:[]
+      }
+    }
+  },
+
+  /* ── 11. اِفْعَالَّ ── */
+  if3aal: {
+    id:"tmz-if3aal",
+    wazan:"اِفْعَالَّ - يَفْعَالُّ",
+    wazanAr:"اِفْعَالَّ",
+    ziyadah:"3 huruf (hamzah washl + alif + tasydid pada lam)",
+    makna:"Menyatakan warna atau cacat fisik yang sangat intens; biasanya lazim.",
+    penjelasan:"اِفْعَالَّ adalah wazan mazid 3 huruf yang menunjukkan intensitas warna atau sifat fisik, lebih kuat daripada اِفْعَلَّ. Contoh: اِحْمَارَّ (menjadi sangat merah).",
+    contohFiil:[
+      { ar:"اِحْمَارَّ - يَحْمَارُّ", arti:"menjadi sangat merah", root:"ح-م-ر" },
+      { ar:"اِخْضَارَّ - يَخْضَارُّ", arti:"menjadi sangat hijau", root:"خ-ض-ر" },
+      { ar:"اِدْهَامَّ - يَدْهَامُّ", arti:"menjadi sangat hitam", root:"د-ه-م" },
+      { ar:"اِشْعَانَّ - يَشْعَانُّ", arti:"rambut menjadi acak-acakan", root:"ش-ع-ن" }
+    ],
+    utama:{ ar:"اِحْمَارَّ", arti:"menjadi sangat merah", root:"ح-م-ر" },
+    tashrif:{
+      ushuli:[
+        { label:"Fi'il Madhi Ma'lum",    ar:"اِحْمَارَّ",      arti:"telah menjadi sangat merah" },
+        { label:"Fi'il Mudhari' Ma'lum", ar:"يَحْمَارُّ",      arti:"sedang/akan menjadi sangat merah" },
+        { label:"Masdar",                ar:"اِحْمِيرَارًا",   arti:"kemerahan yang sangat" },
+        { label:"Fi'il Amr",             ar:"اِحْمَارِرْ",     arti:"jadilah sangat merah!" },
+        { label:"Fi'il Nahyi",           ar:"لَا تَحْمَارِرْ", arti:"jangan menjadi sangat merah!" },
+        { label:"Isim Fa'il",            ar:"مُحْمَارٌّ",      arti:"yang sangat merah" },
+        { label:"Isim Maf'ul",           ar:"-",              arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Madhi Majhul",    ar:"-",              arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Mudhari' Majhul", ar:"-",              arti:"(lazim — tidak ada)" },
+        { label:"Isim Zaman/Makan",      ar:"-",              arti:"(tidak berlaku)" }
+      ],
+      lughawi:{
+        madhi_malum:[
+          ["هُوَ","اِحْمَارَّ","ihmaarra","dia (lk.) telah menjadi sangat merah"],
+          ["هِيَ","اِحْمَارَّتْ","ihmaarrat","dia (pr.) telah menjadi sangat merah"],
+          ["هُمَا","اِحْمَارَّا","ihmaarraa","keduanya (lk.) telah menjadi sangat merah"],
+          ["هُمَا","اِحْمَارَّتَا","ihmaarrataa","keduanya (pr.) telah menjadi sangat merah"],
+          ["هُمْ","اِحْمَارُّوْا","ihmaarruu","mereka (lk.) telah menjadi sangat merah"],
+          ["هُنَّ","اِحْمَارَرْنَ","ihmaararna","mereka (pr.) telah menjadi sangat merah"],
+          ["أَنْتَ","اِحْمَارَرْتَ","ihmaararta","kamu (lk.) telah menjadi sangat merah"],
+          ["أَنْتِ","اِحْمَارَرْتِ","ihmaararti","kamu (pr.) telah menjadi sangat merah"],
+          ["أَنْتُمَا","اِحْمَارَرْتُمَا","ihmaarartumaa","kamu berdua telah menjadi sangat merah"],
+          ["أَنْتُمْ","اِحْمَارَرْتُمْ","ihmaarartum","kamu semua (lk.) telah menjadi sangat merah"],
+          ["أَنْتُنَّ","اِحْمَارَرْتُنَّ","ihmaarartunna","kamu semua (pr.) telah menjadi sangat merah"],
+          ["أَنَا","اِحْمَارَرْتُ","ihmaarartu","saya telah menjadi sangat merah"],
+          ["نَحْنُ","اِحْمَارَرْنَا","ihmaararnaa","kami/kita telah menjadi sangat merah"]
+        ],
+        mudhari_malum:[
+          ["هُوَ","يَحْمَارُّ","yahmaarru","dia (lk.) menjadi sangat merah"],
+          ["هِيَ","تَحْمَارُّ","tahmaarru","dia (pr.) menjadi sangat merah"],
+          ["هُمَا","يَحْمَارَّانِ","yahmaarraani","keduanya (lk.) menjadi sangat merah"],
+          ["هُمَا","تَحْمَارَّانِ","tahmaarraani","keduanya (pr.) menjadi sangat merah"],
+          ["هُمْ","يَحْمَارُّوْنَ","yahmaarruuna","mereka (lk.) menjadi sangat merah"],
+          ["هُنَّ","يَحْمَارِرْنَ","yahmaarirna","mereka (pr.) menjadi sangat merah"],
+          ["أَنْتَ","تَحْمَارُّ","tahmaarru","kamu (lk.) menjadi sangat merah"],
+          ["أَنْتِ","تَحْمَارِّيْنَ","tahmaarriina","kamu (pr.) menjadi sangat merah"],
+          ["أَنْتُمَا","تَحْمَارَّانِ","tahmaarraani","kamu berdua menjadi sangat merah"],
+          ["أَنْتُمْ","تَحْمَارُّوْنَ","tahmaarruuna","kamu semua (lk.) menjadi sangat merah"],
+          ["أَنْتُنَّ","تَحْمَارِرْنَ","tahmaarirna","kamu semua (pr.) menjadi sangat merah"],
+          ["أَنَا","أَحْمَارُّ","ahmaarru","saya menjadi sangat merah"],
+          ["نَحْنُ","نَحْمَارُّ","nahmaarru","kami/kita menjadi sangat merah"]
+        ],
+        amr:[
+          ["أَنْتَ","اِحْمَارِرْ","ihmaarir","jadilah sangat merah! (lk.)"],
+          ["أَنْتِ","اِحْمَارِّيْ","ihmaarrii","jadilah sangat merah! (pr.)"],
+          ["أَنْتُمَا","اِحْمَارِّا","ihmaarriaa","jadilah sangat merah kamu berdua!"],
+          ["أَنْتُمْ","اِحْمَارُّوْا","ihmaarruu","jadilah sangat merah kamu semua (lk.)!"],
+          ["أَنْتُنَّ","اِحْمَارِرْنَ","ihmaarirna","jadilah sangat merah kamu semua (pr.)!"]
+        ],
+        madhi_majhul:[], mudhari_majhul:[]
+      }
+    }
+  },
+
+  /* ── 12. اِفْعَوْعَلَ ── */
+  if3awal: {
+    id:"tmz-if3awal",
+    wazan:"اِفْعَوْعَلَ - يَفْعَوْعِلُ",
+    wazanAr:"اِفْعَوْعَلَ",
+    ziyadah:"3 huruf (hamzah washl + waw + pengulangan 'ain)",
+    makna:"Menyatakan keadaan atau sifat fisik, warna, atau gerakan; biasanya lazim.",
+    penjelasan:"اِفْعَوْعَلَ adalah wazan mazid 3 huruf yang jarang. Cirinya: 'ain fi'il diulang setelah waw sukun. Contoh: اِحْدَوْدَبَ (menjadi bungkuk).",
+    contohFiil:[
+      { ar:"اِحْدَوْدَبَ - يَحْدَوْدِبُ", arti:"menjadi bungkuk", root:"ح-د-ب" },
+      { ar:"اِغْرَوْرَقَ - يَغْرَوْرِقُ", arti:"berlinang air mata", root:"غ-ر-ق" },
+      { ar:"اِغْدَوْدَنَ - يَغْدَوْدِنُ", arti:"tumbuh lebat", root:"غ-د-ن" },
+      { ar:"اِخْشَوْشَنَ - يَخْشَوْشِنُ", arti:"menjadi kasar", root:"خ-ش-ن" }
+    ],
+    utama:{ ar:"اِحْدَوْدَبَ", arti:"menjadi bungkuk", root:"ح-د-ب" },
+    tashrif:{
+      ushuli:[
+        { label:"Fi'il Madhi Ma'lum",    ar:"اِحْدَوْدَبَ",      arti:"telah menjadi bungkuk" },
+        { label:"Fi'il Mudhari' Ma'lum", ar:"يَحْدَوْدِبُ",      arti:"sedang/akan menjadi bungkuk" },
+        { label:"Masdar",                ar:"اِحْدِيْدَابًا",    arti:"kebungkukan" },
+        { label:"Fi'il Amr",             ar:"اِحْدَوْدِبْ",      arti:"jadilah bungkuk!" },
+        { label:"Fi'il Nahyi",           ar:"لَا تَحْدَوْدِبْ",  arti:"jangan menjadi bungkuk!" },
+        { label:"Isim Fa'il",            ar:"مُحْدَوْدِبٌ",      arti:"yang bungkuk" },
+        { label:"Isim Maf'ul",           ar:"-",               arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Madhi Majhul",    ar:"-",               arti:"(lazim — tidak ada)" },
+        { label:"Fi'il Mudhari' Majhul", ar:"-",               arti:"(lazim — tidak ada)" },
+        { label:"Isim Zaman/Makan",      ar:"-",               arti:"(tidak berlaku)" }
+      ],
+      lughawi:{
+        madhi_malum:[
+          ["هُوَ","اِحْدَوْدَبَ","ihdawdaba","dia (lk.) telah menjadi bungkuk"],
+          ["هِيَ","اِحْدَوْدَبَتْ","ihdawdabat","dia (pr.) telah menjadi bungkuk"],
+          ["هُمَا","اِحْدَوْدَبَا","ihdawdabaa","keduanya (lk.) telah menjadi bungkuk"],
+          ["هُمَا","اِحْدَوْدَبَتَا","ihdawdabataa","keduanya (pr.) telah menjadi bungkuk"],
+          ["هُمْ","اِحْدَوْدَبُوْا","ihdawdabuu","mereka (lk.) telah menjadi bungkuk"],
+          ["هُنَّ","اِحْدَوْدَبْنَ","ihdawdabna","mereka (pr.) telah menjadi bungkuk"],
+          ["أَنْتَ","اِحْدَوْدَبْتَ","ihdawdabta","kamu (lk.) telah menjadi bungkuk"],
+          ["أَنْتِ","اِحْدَوْدَبْتِ","ihdawdabti","kamu (pr.) telah menjadi bungkuk"],
+          ["أَنْتُمَا","اِحْدَوْدَبْتُمَا","ihdawdabtumaa","kamu berdua telah menjadi bungkuk"],
+          ["أَنْتُمْ","اِحْدَوْدَبْتُمْ","ihdawdabtum","kamu semua (lk.) telah menjadi bungkuk"],
+          ["أَنْتُنَّ","اِحْدَوْدَبْتُنَّ","ihdawdabtunna","kamu semua (pr.) telah menjadi bungkuk"],
+          ["أَنَا","اِحْدَوْدَبْتُ","ihdawdabtu","saya telah menjadi bungkuk"],
+          ["نَحْنُ","اِحْدَوْدَبْنَا","ihdawdabnaa","kami/kita telah menjadi bungkuk"]
+        ],
+        mudhari_malum:[
+          ["هُوَ","يَحْدَوْدِبُ","yahdawdibu","dia (lk.) menjadi bungkuk"],
+          ["هِيَ","تَحْدَوْدِبُ","tahdawdibu","dia (pr.) menjadi bungkuk"],
+          ["هُمَا","يَحْدَوْدِبَانِ","yahdawdibaani","keduanya (lk.) menjadi bungkuk"],
+          ["هُمَا","تَحْدَوْدِبَانِ","tahdawdibaani","keduanya (pr.) menjadi bungkuk"],
+          ["هُمْ","يَحْدَوْدِبُوْنَ","yahdawdibuuna","mereka (lk.) menjadi bungkuk"],
+          ["هُنَّ","يَحْدَوْدِبْنَ","yahdawdibna","mereka (pr.) menjadi bungkuk"],
+          ["أَنْتَ","تَحْدَوْدِبُ","tahdawdibu","kamu (lk.) menjadi bungkuk"],
+          ["أَنْتِ","تَحْدَوْدِبِيْنَ","tahdawdibiina","kamu (pr.) menjadi bungkuk"],
+          ["أَنْتُمَا","تَحْدَوْدِبَانِ","tahdawdibaani","kamu berdua menjadi bungkuk"],
+          ["أَنْتُمْ","تَحْدَوْدِبُوْنَ","tahdawdibuuna","kamu semua (lk.) menjadi bungkuk"],
+          ["أَنْتُنَّ","تَحْدَوْدِبْنَ","tahdawdibna","kamu semua (pr.) menjadi bungkuk"],
+          ["أَنَا","أَحْدَوْدِبُ","ahdawdibu","saya menjadi bungkuk"],
+          ["نَحْنُ","نَحْدَوْدِبُ","nahdawdibu","kami/kita menjadi bungkuk"]
+        ],
+        amr:[
+          ["أَنْتَ","اِحْدَوْدِبْ","ihdawdib","jadilah bungkuk! (lk.)"],
+          ["أَنْتِ","اِحْدَوْدِبِيْ","ihdawdibii","jadilah bungkuk! (pr.)"],
+          ["أَنْتُمَا","اِحْدَوْدِبَا","ihdawdibaa","jadilah bungkuk kamu berdua!"],
+          ["أَنْتُمْ","اِحْدَوْدِبُوْا","ihdawdibuu","jadilah bungkuk kamu semua (lk.)!"],
+          ["أَنْتُنَّ","اِحْدَوْدِبْنَ","ihdawdibna","jadilah bungkuk kamu semua (pr.)!"]
+        ],
+        madhi_majhul:[], mudhari_majhul:[]
+      }
+    }
   }
 
 }; // end TSULATSI_MAZID
@@ -1744,6 +2029,10 @@ const SEARCH_INDEX = [
   { ar:"تَعَاوَنَ - يَتَعَاوَنُ",arti:"bekerja sama", wazan:"تَفَاعَلَ",  page:"tmz-tafaaal", grup:"Tsulatsi Mazid" },
   { ar:"اِسْتَغْفَرَ - يَسْتَغْفِرُ",arti:"meminta ampun",wazan:"اِسْتَفْعَلَ",page:"tmz-istaf3al",grup:"Tsulatsi Mazid" },
   { ar:"اِسْتَعَانَ - يَسْتَعِيْنُ",arti:"meminta pertolongan",wazan:"اِسْتَفْعَلَ",page:"tmz-istaf3al",grup:"Tsulatsi Mazid" },
+  { ar:"اِحْمَرَّ - يَحْمَرُّ",arti:"menjadi merah",wazan:"اِفْعَلَّ",page:"tmz-ifaal",grup:"Tsulatsi Mazid" },
+  { ar:"اِحْمَارَّ - يَحْمَارُّ",arti:"menjadi sangat merah",wazan:"اِفْعَالَّ",page:"tmz-if3aal",grup:"Tsulatsi Mazid" },
+  { ar:"اِحْدَوْدَبَ - يَحْدَوْدِبُ",arti:"menjadi bungkuk",wazan:"اِفْعَوْعَلَ",page:"tmz-if3awal",grup:"Tsulatsi Mazid" },
+  { ar:"اِجْلَوَّذَ - يَجْلَوِّذُ",arti:"berjalan cepat",wazan:"اِفْعَوَّلَ",page:"tmz-if3awwal",grup:"Tsulatsi Mazid" },
   // Ruba'i
   { ar:"دَحْرَجَ - يُدَحْرِجُ", arti:"menggelindingkan",wazan:"فَعْلَلَ", page:"rm-mujarrad",grup:"Ruba'i Mujarrad" },
   { ar:"زَلْزَلَ - يُزَلْزِلُ", arti:"mengguncang",    wazan:"فَعْلَلَ", page:"rm-mujarrad",grup:"Ruba'i Mujarrad" },

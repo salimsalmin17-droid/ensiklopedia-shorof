@@ -91,6 +91,10 @@ function renderPage(page, container) {
     case 'tmz-tafa3al':     return renderMazid('tafa3al', container);
     case 'tmz-tafaaal':     return renderMazid('tafaaal', container);
     case 'tmz-istaf3al':    return renderMazid('istaf3al', container);
+    case 'tmz-ifaal':       return renderMazid('if3alla', container);
+    case 'tmz-if3awal':     return renderMazid('if3awal', container);
+    case 'tmz-if3awwal':    return renderMazid('if3awwal', container);
+    case 'tmz-if3aal':      return renderMazid('if3aal', container);
     case 'rm-overview':     return renderRMOverview(container);
     case 'rm-mujarrad':     return renderRubai('mujarrad', container);
     case 'rm-tafa3lal':     return renderRubai('tafa3lal', container);
@@ -127,7 +131,7 @@ function renderBeranda(c) {
       <div class="stat-label">Bab Tsulatsi Mujarrad</div>
     </div>
     <div class="stat-card" onclick="navigateTo('tmz-overview')">
-      <div class="stat-num">11</div>
+      <div class="stat-num">12</div>
       <div class="stat-label">Wazan Tsulatsi Mazid</div>
     </div>
     <div class="stat-card" onclick="navigateTo('rm-overview')">
@@ -173,7 +177,7 @@ function renderBeranda(c) {
     <div class="qnav-card" onclick="navigateTo('tmz-overview')">
       <span class="qnav-icon">M</span>
       <span class="qnav-title">Tsulatsi Mazid</span>
-      <span class="qnav-sub">11 wazan + contoh fi'il nyata</span>
+      <span class="qnav-sub">12 wazan + contoh fi'il nyata</span>
     </div>
     <div class="qnav-card" onclick="navigateTo('rm-overview')">
       <span class="qnav-icon">R</span>
@@ -1157,9 +1161,13 @@ function renderMesinTashrif(c) {
         dir="rtl"
         autocomplete="off"
         oninput="onMadhiInput(this.value)"
-        onkeydown="if(event.key==='Enter') doAnalyze()"
+        onkeydown="mtInputKeydown(event)"
       />
-      <button class="mt-clear-btn" onclick="mtReset()" title="Hapus" aria-label="Hapus">
+      <button class="mt-backspace-btn" type="button" onclick="mtBackspace()" title="Hapus satu karakter" aria-label="Hapus satu karakter">
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 5H9l-6 7 6 7h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1Z"/><path d="m17 9-6 6M11 9l6 6"/></svg>
+        <span>Hapus</span>
+      </button>
+      <button class="mt-clear-btn" onclick="mtReset()" title="Bersihkan semua" aria-label="Bersihkan semua">
         <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
       </button>
     </div>
@@ -1235,25 +1243,76 @@ function buildVirtualKeyboard() {
   ).join('');
 }
 
-function mtTypeChar(ch) {
+function mtInsertAtCursor(text) {
   const inp = document.getElementById('mt-madhi-input');
   if (!inp) return;
-  const pos = inp.selectionStart || inp.value.length;
-  inp.value = inp.value.slice(0,pos) + ch + inp.value.slice(pos);
+  const start = inp.selectionStart ?? inp.value.length;
+  const end = inp.selectionEnd ?? start;
+  inp.value = inp.value.slice(0, start) + text + inp.value.slice(end);
+  const pos = start + text.length;
   inp.focus();
+  inp.setSelectionRange(pos, pos);
   onMadhiInput(inp.value);
 }
 
+function mtTypeChar(ch) {
+  mtInsertAtCursor(ch);
+}
+
 function mtTypeHar(code) {
+  if (code === 'del') {
+    mtBackspace();
+    return;
+  }
+  mtInsertAtCursor(code);
+}
+
+/* Hapus satu karakter sebelum kursor. Harakat yang menempel pada huruf
+   ikut terhapus supaya satu ketukan = satu huruf yang terlihat. */
+function mtBackspace() {
   const inp = document.getElementById('mt-madhi-input');
   if (!inp) return;
-  if (code === 'del') {
-    inp.value = inp.value.slice(0, -1);
-  } else {
-    inp.value += code;
+
+  const start = inp.selectionStart ?? inp.value.length;
+  const end = inp.selectionEnd ?? start;
+
+  if (start !== end) {
+    inp.value = inp.value.slice(0, start) + inp.value.slice(end);
+    inp.focus();
+    inp.setSelectionRange(start, start);
+    onMadhiInput(inp.value);
+    return;
   }
-  inp.focus();
-  onMadhiInput(inp.value);
+
+  if (start > 0) {
+    const before = inp.value.slice(0, start);
+    const after = inp.value.slice(start);
+    let cut = before.length;
+
+    // Lewati harakat/tanda yang menempel di belakang, lalu hapus hurufnya.
+    while (cut > 0 && /[\u064B-\u0652\u0670]/.test(before[cut - 1])) cut--;
+    if (cut > 0) cut--;
+
+    inp.value = before.slice(0, cut) + after;
+    inp.focus();
+    inp.setSelectionRange(cut, cut);
+    onMadhiInput(inp.value);
+  } else {
+    inp.focus();
+  }
+}
+
+function mtInputKeydown(event) {
+  if (event.isComposing) return;
+  if (event.key === 'Backspace' && !event.ctrlKey && !event.altKey && !event.metaKey) {
+    event.preventDefault();
+    mtBackspace();
+    return;
+  }
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    doAnalyze();
+  }
 }
 
 /* ─────────────────────────────────
